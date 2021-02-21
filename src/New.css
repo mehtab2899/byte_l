@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+	overflow-x: hidden;
+	margin: 0;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+i {
+	color: rgb(255, 0, 0);
+}
+
+/* ///////////////////////////////////////// */
+
+.tops {
+	position: absolute;
+	top: -5rem;
+}
+
+.sidebar {
+	margin-top: 4rem;
+	height: 100vh;
+}
+
+Nav[variant="pills"] {
+	background: gray;
+}
+
+/* topbar component */
+
+.topbar_div1 {
+	display: flex;
+	margin-top: 1rem;
+}
+
+.topbar_div1 span {
+	margin-left: -13rem;
+	color: #000;
+}
+
+.topbar_div4 {
+	position: relative;
+	right: -35rem;
+}
+
+.topbar_div2,
+.topbar_div3 {
+	padding-top: 0.5rem;
+	font-weight: bold;
+}
+
+.topbar_div2,
+.topbar_div3 label {
+	color: rgb(16, 16, 73);
+}
+
+.topbar_div2 span,
+.topbar_div3 span {
+	color: green;
+	padding-left: 0.2rem;
+}
+
+/* doctor component */
+
+.custom-h6 {
+	margin: 3rem 0 1rem 11rem;
+}
+
+/* doc component */
+
+.doc_div2 {
+	display: flex;
+	margin: 2rem 0 0 4rem;
+}
+
+.doc_div2-span {
+	position: relative;
+	top: 3rem;
+	left: -20rem;
+	font-size: 0.8rem;
+}
+
+.doc_div2 Button {
+	position: relative;
+	right: 17rem;
+	padding: 0 0.2rem;
+}
+
+/* docs1 component */
+
+.document_div1 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+.document_div1 h6 {
+	position: relative;
+	top: 1rem;
+}
