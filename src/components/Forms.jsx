@@ -29,7 +29,7 @@ const Forms = () => {
 						<Form.Check type="text" id="customControlAutosizing" />
 					</Col>
 					<Col xs="auto" className="my-1">
-						<Button type="submit">Submit</Button>
+						<Button type="submit">Search</Button>
 					</Col>
 				</Form.Row>
 			</Form>

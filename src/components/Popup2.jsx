@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Button, Modal } from "react-bootstrap";
-import Forms from "./Forms";
-import Axios from "axios";
 
-class Popup extends Component {
+class Popup2 extends Component {
 	constructor() {
 		super();
 		this.state = {
@@ -15,27 +13,9 @@ class Popup extends Component {
 		this.setState({ show: !this.state.show });
 	}
 
-	getData = () => {
-		Axios.get(
-			"http://www.bytelabsindia.com/api/patients/search?search_by=policy_number&search_value=12345",
-			{
-				headers: {
-					Authorization: "UGFzc0Fhb0dhbGVTZUxhZ2Fv",
-				},
-			}
-		)
-			.then((res) => {
-				console.log(res.data);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-	};
-
 	render() {
 		return (
 			<div>
-				<Button onClick={this.getData()}>get data</Button>
 				<Button
 					onClick={() => {
 						this.handleModal();
@@ -57,16 +37,15 @@ class Popup extends Component {
 						</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
-						<h6>Search Patient Record</h6>
-						<Forms />
+						<h6>Select Company & Hospital</h6>
 					</Modal.Body>
-					<Modal.Footer>
+					<Modal.Footer className="text-center">
 						<Button
 							onClick={() => {
 								this.handleModal();
 							}}
 						>
-							Close
+							Proceed &gt;&gt;
 						</Button>
 					</Modal.Footer>
 				</Modal>
@@ -75,4 +54,4 @@ class Popup extends Component {
 	}
 }
 
-export default Popup;
+export default Popup2;
