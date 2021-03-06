@@ -1,13 +1,12 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./New.css";
-import Sidebar from "./components/Sidebar";
+import Popup from "./components/Popup";
 
 const App = () => {
 	return (
 		<React.Fragment>
-			<Sidebar />
+			<Popup />
 		</React.Fragment>
 	);
 };
