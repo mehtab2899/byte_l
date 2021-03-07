@@ -1,12 +1,14 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Popup2 from "./components/Popup2";
+// import Popup1 from "./components/Popup1";
+import Popup from "./components/Popup";
 
 const App = () => {
 	return (
 		<React.Fragment>
-			<Popup2 />
+			{/* <Popup1 /> */}
+			<Popup />
 		</React.Fragment>
 	);
 };
