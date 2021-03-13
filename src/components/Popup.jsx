@@ -9,16 +9,43 @@ class Popup extends Component {
 		this.state = {
 			show: false,
 			patient_data: [],
+			value: "uid",
+			placeholder: "Enter Patient UID",
+			inputValue: "",
+			showTable: false,
 		};
 	}
+
+	handleChange = (e) => {
+		console.log("===>", e.target.value);
+		this.setState({ value: e.target.value });
+		if (e.target.value === "uid") {
+			this.setState({ placeholder: "Enter Patient UID" });
+		} else if (e.target.value === "policy_number") {
+			this.setState({
+				placeholder: "Enter Last 5 Characters of Policy Number",
+			});
+		} else {
+			this.setState({
+				placeholder: "Enter Last 5 Characters of health card no.",
+			});
+		}
+	};
+
+	handleInputChange = (e) => {
+		console.log(e.target.value);
+		this.setState({ inputValue: e.target.value });
+	};
 
 	handleModal() {
 		this.setState({ show: !this.state.show });
 	}
 
-	async componentDidMount() {
+	handleSubmit = (e) => {
+		e.preventDefault();
+		this.setState({ showTable: true });
 		Axios.get(
-			"http://www.bytelabsindia.com/api/patients/search?search_by=policy_number&search_value=12345",
+			`http://www.bytelabsindia.com/api/patients/search?search_by=${this.state.value}&search_value=${this.state.inputValue}`,
 			{
 				headers: {
 					Authorization: "UGFzc0Fhb0dhbGVTZUxhZ2Fv",
@@ -27,11 +54,12 @@ class Popup extends Component {
 		)
 			.then((res) => {
 				this.setState({ patient_data: res.data.data });
+				console.log("api_data", res.data.data);
 			})
 			.catch((error) => {
 				console.error(error);
 			});
-	}
+	};
 
 	render() {
 		return (
@@ -59,7 +87,16 @@ class Popup extends Component {
 					</Modal.Header>
 					<Modal.Body>
 						<h6>Search Patient Record</h6>
-						<Forms patient_data={this.state.patient_data} />
+						<Forms
+							patient_data={this.state.patient_data}
+							inputValue={this.state.inputValue}
+							handleInputChange={this.handleInputChange.bind(this)}
+							placeHolder={this.state.placeholder}
+							value={this.state.value}
+							handleChange={this.handleChange.bind(this)}
+							showTable={this.state.showTable}
+							handleSubmit={this.handleSubmit.bind(this)}
+						/>
 					</Modal.Body>
 					<Modal.Footer>
 						<Button

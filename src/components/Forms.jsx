@@ -1,42 +1,51 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Form, Col, Button } from "react-bootstrap";
 import Tables from "./Tables";
 
-const Forms = (props) => {
-	const pat_data = props.patient_data;
+const Forms = ({
+	patient_data,
+	value,
+	placeHolder,
+	inputValue,
+	handleInputChange,
+	handleChange,
+	handleSubmit,
+	showTable,
+}) => {
+	console.log("forms main patient data dekhna hai", patient_data);
+	// const [value, setValue] = useState("uid");
+	// const [showTable, setShowTable] = useState(false);
+	// const [placeholder, setPlaceholder] = useState("Enter Patient UID");
 
-	const [value, setValue] = useState("uid");
-	const [showTable, setShowTable] = useState(false);
-	const [placeholder, setPlaceholder] = useState("Enter Patient UID");
+	// const [inputValue, setInputValue] = useState(null);
 
-	const [inputValue, setInputValue] = useState(null);
+	// const handleInputChange = (e) => {
+	// 	setInputValue(e.target.value);
+	// };
 
-	const handleInputChange = (e) => {
-		setInputValue(e.target.value);
-	};
+	// const InputTypeSelector = useRef();
+	// const [InputTypeSelectorr, setInputTypeselector] = useState("text");
 
-	const InputTypeSelector = useRef();
-	const [InputTypeSelectorr, setInputTypeselector] = useState("text");
+	// const handleChange = (e) => {
+	// 	setValue(e.target.value);
+	// 	if (e.target.value === "uid") {
+	// 		setPlaceholder("Enter Patient UID");
+	// 		setInputTypeselector("text");
+	// 	} else if (e.target.value === "policy_number") {
+	// 		setPlaceholder("Enter Last 5 Characters of Policy Number");
+	// 		setInputTypeselector("number");
+	// 	} else {
+	// 		setPlaceholder("Enter Last 5 Characters of health card no");
+	// 		setInputTypeselector("number");
+	// 	}
+	// };
 
-	const handleChange = (e) => {
-		setValue(e.target.value);
-		if (e.target.value === "uid") {
-			setPlaceholder("Enter Patient UID");
-			setInputTypeselector("text");
-		} else if (e.target.value === "policy_number") {
-			setPlaceholder("Enter Last 5 Characters of Policy Number");
-			setInputTypeselector("number");
-		} else {
-			setPlaceholder("Enter Last 5 Characters of health card no");
-			setInputTypeselector("number");
-		}
-	};
+	// const handleSearch = (e) => {
+	// 	e.preventDefault();
 
-	const handleSearch = (e) => {
-		e.preventDefault();
-		setShowTable(true);
-	};
+	// 	setShowTable(true);
+	// };
 	return (
 		<div>
 			<Form>
@@ -64,22 +73,21 @@ const Forms = (props) => {
 					</Col>
 					<Col xs="auto" className="my-1">
 						<input
-							ref={InputTypeSelector}
-							type={InputTypeSelectorr}
+							type="text"
 							className="form-control custom-input"
 							id="customControlAutosizing"
-							placeholder={placeholder}
+							placeholder={placeHolder}
 							value={inputValue}
 							onChange={handleInputChange}
 						/>
 					</Col>
 					<Col xs="auto" className="my-1">
-						<Button type="submit" onClick={handleSearch} disabled={!inputValue}>
+						<Button type="submit" onClick={handleSubmit} disabled={!inputValue}>
 							Search
 						</Button>
 					</Col>
 				</Form.Row>
-				{showTable && <Tables patient_datas={pat_data} />}
+				{showTable && <Tables patient_data={patient_data} />}
 			</Form>
 		</div>
 	);
