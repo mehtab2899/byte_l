@@ -44,7 +44,7 @@ class Popup1 extends Component {
 
 	render() {
 		return (
-			<div className="height-adjust">
+			<div>
 				<Modal
 					show={this.props.show}
 					size="lg"

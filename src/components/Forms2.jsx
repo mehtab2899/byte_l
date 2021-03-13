@@ -4,6 +4,7 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 const Forms2 = (props) => {
 	const arr = props.company_name.data;
 	const hos_result = props.hos_name.data;
+	console.log(hos_result);
 	return (
 		<div>
 			<Form>

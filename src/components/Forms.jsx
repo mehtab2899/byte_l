@@ -3,7 +3,9 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Form, Col, Button } from "react-bootstrap";
 import Tables from "./Tables";
 
-const Forms = () => {
+const Forms = (props) => {
+	const pat_data = props.patient_data;
+
 	const [value, setValue] = useState("uid");
 	const [showTable, setShowTable] = useState(false);
 	const [placeholder, setPlaceholder] = useState("Enter Patient UID");
@@ -77,7 +79,7 @@ const Forms = () => {
 						</Button>
 					</Col>
 				</Form.Row>
-				{showTable && <Tables />}
+				{showTable && <Tables patient_datas={pat_data} />}
 			</Form>
 		</div>
 	);

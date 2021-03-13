@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import Popup1 from "./Popup1";
 
-const Tables = () => {
+const Tables = (props) => {
+	const pt_datas = props.patient_datas;
+
 	const [show, setShow] = useState(false);
 
 	const handleShow = () => {
@@ -30,19 +32,25 @@ const Tables = () => {
 						<td>
 							<input type="radio" name="foo" />
 						</td>
-						<td>SRK230279/01</td>
-						<td>Sanjay Rajaram Kale</td>
-						<td>123456789</td>
-						<td>123/2020/199</td>
+						<td>{pt_datas[0].mw_patient_id}</td>
+						<td>{pt_datas[0].fname + " " + pt_datas[0].lname}</td>
+						<td>{pt_datas[0].isurance_id_card_number}</td>
+						<td>{pt_datas[0].policy_number}</td>
 					</tr>
 					<tr>
 						<td>
 							<input type="radio" name="foo" />
 						</td>
-						<td>RUP021211/02</td>
-						<td>Ravi Uttamrao Patil</td>
-						<td>45678912359</td>
-						<td>456/1920/199</td>
+						<td>{pt_datas[1].mw_patient_id}</td>
+						<td>
+							{pt_datas[1].fname +
+								" " +
+								pt_datas[1].mname +
+								" " +
+								pt_datas[1].lname}
+						</td>
+						<td>{pt_datas[1].isurance_id_card_number}</td>
+						<td>{pt_datas[1].policy_number}</td>
 					</tr>
 				</tbody>
 			</Table>
