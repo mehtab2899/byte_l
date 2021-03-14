@@ -12,6 +12,8 @@ const Forms = ({
 	handleChange,
 	handleSubmit,
 	showTable,
+	popupCloseState,
+	modelClosePopupFunction,
 }) => {
 	return (
 		<div>
@@ -54,7 +56,13 @@ const Forms = ({
 						</Button>
 					</Col>
 				</Form.Row>
-				{showTable && <Tables patient_data={patient_data} />}
+				{showTable && (
+					<Tables
+						patient_data={patient_data}
+						popupCloseState={popupCloseState}
+						modelClosePopupFunction={modelClosePopupFunction}
+					/>
+				)}
 			</Form>
 		</div>
 	);

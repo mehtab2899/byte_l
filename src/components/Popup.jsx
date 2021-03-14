@@ -13,6 +13,7 @@ class Popup extends Component {
 			placeholder: "Enter Patient UID",
 			inputValue: "",
 			showTable: false,
+			popupClose: false,
 		};
 	}
 
@@ -58,6 +59,9 @@ class Popup extends Component {
 			});
 	};
 
+	handleModelClosePopup = () => {
+		this.setState({ popupClose: true });
+	};
 	render() {
 		return (
 			<div>
@@ -84,6 +88,8 @@ class Popup extends Component {
 					<Modal.Body>
 						<h6>Search Patient Record</h6>
 						<Forms
+							popupCloseState={this.state.popupClose}
+							modelClosePopupFunction={this.handleModelClosePopup.bind(this)}
 							patient_data={this.state.patient_data}
 							inputValue={this.state.inputValue}
 							handleInputChange={this.handleInputChange.bind(this)}

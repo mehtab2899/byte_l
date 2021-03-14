@@ -1,10 +1,10 @@
 import React from "react";
 import { Form, Col, Row, Button } from "react-bootstrap";
 
-const Forms2 = (props) => {
-	const arr = props.company_name.data;
-	const hos_result = props.hos_name.data;
-
+const Forms2 = ({ company_name, hos_name }) => {
+	const arr = company_name;
+	const hos_result = hos_name;
+	console.log("last proceed form rendered");
 	return (
 		<div>
 			<Form>
@@ -20,7 +20,7 @@ const Forms2 = (props) => {
 							custom
 						>
 							{arr
-								? arr.map((data) => (
+								? arr.data.map((data) => (
 										<option key={data.id}>{data.company_name}</option>
 								  ))
 								: null}
@@ -40,14 +40,13 @@ const Forms2 = (props) => {
 							custom
 						>
 							{hos_result
-								? hos_result.map((data) => (
+								? hos_result.data.map((data) => (
 										<option key={data.id}>{data.name}</option>
 								  ))
 								: null}
 						</Form.Control>
 					</Col>
 				</Form.Group>
-
 				<Form.Group as={Row}>
 					<Col className="text-center forms2-btn mt-5">
 						<Button type="submit">Proceed &gt;&gt;</Button>

@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import Popup1 from "./Popup1";
 
-const Tables = (props) => {
-	const pt_datas = props.patient_data;
+const Tables = ({ patient_data, modelClosePopupFunction, popupCloseState }) => {
+	const pt_datas = patient_data;
 
 	const [show, setShow] = useState(false);
-
-	const handleShow = () => {
-		setShow(true);
-	};
 
 	const handlePopClose = () => {
 		setShow(false);
@@ -37,8 +33,7 @@ const Tables = (props) => {
 											<input type="radio" name="foo" />
 										</td>
 										<td>{data.mw_patient_id}</td>
-
-										<td>{data.fname + " b" + data.lname}</td>
+										<td>{data.fname + " " + data.lname}</td>
 										<td>{data.isurance_id_card_number}</td>
 										<td>{data.policy_number}</td>
 									</tr>
@@ -48,9 +43,11 @@ const Tables = (props) => {
 				</tbody>
 			</Table>
 			<div className="text-right mt-4 mb-5">
-				<Button onClick={handleShow}>Select Patient & Proceed &gt;&gt;</Button>
+				<Button onClick={modelClosePopupFunction}>
+					Select Patient & Proceed &gt;&gt;
+				</Button>
 			</div>
-			<Popup1 show={show} onClick={handlePopClose} />
+			<Popup1 show={popupCloseState} onClick={handlePopClose} />
 		</div>
 	);
 };

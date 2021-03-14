@@ -16,7 +16,7 @@ class Popup1 extends Component {
 		this.setState({ show: !this.state.show });
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
 		Axios.get("http://www.bytelabsindia.com/api/hospital/companies/1", {
 			headers: {
 				Authorization: "UGFzc0Fhb0dhbGVTZUxhZ2Fv",
@@ -38,7 +38,7 @@ class Popup1 extends Component {
 				this.setState({ arr1: res.data });
 			})
 			.catch((error) => {
-				console.log(error);
+				console.error(error);
 			});
 	}
 
