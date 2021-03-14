@@ -17,7 +17,6 @@ class Popup extends Component {
 	}
 
 	handleChange = (e) => {
-		console.log("===>", e.target.value);
 		this.setState({ value: e.target.value });
 		if (e.target.value === "uid") {
 			this.setState({ placeholder: "Enter Patient UID" });
@@ -33,7 +32,6 @@ class Popup extends Component {
 	};
 
 	handleInputChange = (e) => {
-		console.log(e.target.value);
 		this.setState({ inputValue: e.target.value });
 	};
 
@@ -54,7 +52,6 @@ class Popup extends Component {
 		)
 			.then((res) => {
 				this.setState({ patient_data: res.data.data });
-				console.log("api_data", res.data.data);
 			})
 			.catch((error) => {
 				console.error(error);
@@ -64,7 +61,6 @@ class Popup extends Component {
 	render() {
 		return (
 			<div>
-				<div className="self-close"></div>
 				<Button
 					onClick={() => {
 						this.handleModal();

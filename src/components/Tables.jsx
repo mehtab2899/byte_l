@@ -4,7 +4,6 @@ import Popup1 from "./Popup1";
 
 const Tables = (props) => {
 	const pt_datas = props.patient_data;
-	console.log("pt_data===>", pt_datas);
 
 	const [show, setShow] = useState(false);
 
