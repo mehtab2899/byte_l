@@ -1,302 +1,76 @@
-/* styling component contents */
+/* UNIVERSAL */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
-/* 1. universal styling 
-   2. reply component styling 
-   3. delivery component styling
-   4. bill component styling
-   5. case component styling
-   6. attachment component styling
-   7. email component styling
-   8. charge(bill) component styling
-   9. details(delivery) component styling
-   10. editor email component styling
-   11. font awesome icons styling 
-   */
+html::-webkit-scrollbar {
+	display: none;
+}
 
-/* //////////////////////////////////////// */
+body {
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	margin: 1rem 5rem 0;
+	color: gray;
+}
 
-/* 1. universal styling */
+/* -------------------------------------------------------------------------- */
+
+/* EMAIL BOX COMPONENT */
+.container {
+	margin-top: 2px;
+	border: 1px solid #000;
+	padding: 0;
+}
 
 hr {
-	background: #000 !important;
-	height: 0.8px !important;
-	margin-top: 0 !important;
+	background: rgb(192, 190, 190);
+	height: 0.03rem;
+	margin: 0.3rem 0 1rem;
 }
 
-/* //////////////////////////////////////////////// */
+/* -------------------------------------------------------------------------- */
 
-/* /////////////////////////////////////////////// */
+/* EMAIL HEADER COMPONENT*/
 
-/* 4. bill component styling */
-
-.bill-container {
-	border: 1px solid #000;
-	background: rgb(226, 225, 225);
-	margin: 1rem;
-}
-
-.bill-header {
-	background: #00ccff;
+.boxes {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	padding: 1rem;
+	margin: 0 0.5rem;
 }
 
-.bill-header h1 {
-	font-size: 1.5rem;
-}
-.bill-header h1 span {
-	color: #fff;
-	padding-left: 2rem;
-	font-size: 0.8rem;
-}
-
-.main-header-price {
-	color: #993300;
-}
-
-.super {
-	margin: 1rem;
-	border: 1px solid #000;
-}
-
-.super-one {
-	background: #00ccff;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 0.5rem;
-}
-
-.bill-head {
-	background: gray;
-}
-
-.table-bill-body {
-	background: #fff;
-}
-
-.price {
-	color: #000099;
-	text-align: right;
-}
-
-.surgery {
-	margin: 1rem;
-	border: 1px solid #000;
-	background: #bff2ff;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 0.5rem;
-}
-
-.surgery-charges {
-	padding: 1rem 5rem;
-	border: 1px solid #000;
-	margin: 1rem;
-	background: #fff;
-}
-
-.surgery-charges label {
-	text-align: right;
-	width: 15rem;
-}
-
-.surgery-charges select {
-	width: 10rem;
-	margin-left: 1rem;
-}
-
-.surgery-charges input {
-	display: inline;
-	width: 10rem;
-	margin: 0 1rem;
-}
-
-.surgery-input::placeholder {
-	color: black !important;
-}
-
-.surgery-charges input::placeholder {
-	color: #000099;
-	text-align: center;
-}
-
-.text-input {
-	width: 4rem !important;
-	margin: 0.2rem;
-}
-
-.text-input::placeholder {
-	padding-left: 1rem;
-	color: #000099;
-}
-
-.text-span {
-	color: #000;
-	font-weight: normal;
-}
-
-.third-last div {
-	display: flex;
-	margin-left: 2rem;
-	text-align: right;
-}
-
-.third-last div label {
-	width: 20rem;
-	margin-right: 1rem;
-}
-
-.third-last div input {
-	height: 2rem;
-}
-
-.second-last {
-	margin: 1rem;
-}
-
-.second-last-one {
-	/* width: 100%; */
-	background: rgb(226, 225, 225);
-	padding: 0.5rem;
-}
-
-.second-last-one label {
-	margin-left: 10rem;
-}
-
-.second-last-one input {
-	display: inline;
-	margin-left: 1rem;
-}
-
-.fourth-last {
-	margin-left: 2rem;
-}
-
-.fourth-last input {
-	display: inline;
-	margin-left: 1rem;
-}
-
-.bottom-div {
-	margin-top: 2rem;
-	color: #000;
-	padding: 1rem 4rem;
-	background: rgb(235, 237, 238);
-	text-align: center;
+.box-one {
 	display: flex;
 }
 
-/* /////////////////////////////////////////////// */
-
-/* /////////////////////////////////////////////// */
-
-/* 6. attachment component styling */
-
-.first-attachment {
-	display: flex;
-	border: 1px solid #000;
+.icons {
+	background: rgb(228, 225, 225);
+	margin: 0 0.2rem;
+	padding: 0.1rem 0.4rem;
+	border-radius: 0.2rem;
 }
 
-.first-attachment select {
-	width: 15rem;
-	margin: 0 1rem;
-}
-
-.first-attachment input {
-	border: 1px solid #000;
-	padding: 0.1rem 0.2rem;
-	width: 20rem;
-	margin: 0 1rem;
-}
-
-.first-attachment button {
-	float: right;
-	margin: 0 2rem;
-}
-
-.doc {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-right: 1rem;
-	margin-top: 1rem;
-}
-
-.doc-anchor1 {
-	padding-right: 4rem;
-}
-
-.doc-anchor3 {
-	padding-right: 12rem;
-}
-
-.ctscan {
-	color: gray;
+.boxes label {
 	font-size: 0.9rem;
 }
 
-/* //////////////////////////////////////////////// */
+/* -------------------------------------------------------------------------- */
 
-/* ///////////////////////////////////////////////// */
-
-/* 8. charges component styling */
-
-.bill-first {
-	border: 1px solid #000;
-	margin: 1rem;
-	background: #fff;
-}
-
-.first,
-.second {
+/* EMAIL BODY COMPONENT */
+.email-body {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	color: #000;
+	/* margin: 0 0.5rem; */
 }
 
-.first {
-	background: #bff2ff;
+.email-body {
+	color: gray;
 }
 
-.first h5 {
-	padding: 0.4rem;
-	color: #0000ff;
+.email-nav:hover {
+	background: rgb(240, 173, 173);
 }
-
-.first h5 span {
-	color: #000;
-	padding-left: 2rem;
-	font-size: 1.2rem;
-	font-weight: normal;
-}
-
-.first span select {
-	padding: 0 2rem 0 0;
-}
-
-.first h5.cost {
-	color: #000;
-	padding: 0.5rem;
-}
-
-.second {
-	padding: 0.5rem 3rem;
-}
-
-.second label {
-	width: 10rem;
-}
-
-.second input {
-	height: 2rem;
-}
-
-/* ////////////////////////////////////////////// */
-
-/* ////////////////////////////////////////////////// */

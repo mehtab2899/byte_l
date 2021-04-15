@@ -1,13 +1,12 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./New.css";
-import Sidebar from "./components/Sidebar";
+import EmailInbox from "./components/EmailInbox";
 
 const App = () => {
 	return (
 		<React.Fragment>
-			<Sidebar />
+			<EmailInbox />
 		</React.Fragment>
 	);
 };
